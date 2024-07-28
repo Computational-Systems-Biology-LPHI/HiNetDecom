@@ -1,0 +1,2355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:moose="http://www.moose.ncbs.res.in" xmlns:groups="http://www.sbml.org/sbml/level3/version1/groups/version1" level="3" version="1" groups:required="false">
+  <model id="D4_model_EGFR_v13b" substanceUnits="substance" timeUnits="time" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="substance">
+    <annotation>
+      <moose:ModelAnnotation>
+        <moose:runTime> 1000.0 </moose:runTime>
+        <moose:solver> ee </moose:solver>
+        <moose:simdt>0.001 </moose:simdt>
+        <moose:plotdt> 0.1 </moose:plotdt>
+        <moose:plots/>
+      </moose:ModelAnnotation>
+    </annotation>
+    <listOfUnitDefinitions>
+      <unitDefinition id="volume">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="litre_per_mmole_per_second">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="-3" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_second">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="kinetics_464_0_" name="kinetics" spatialDimensions="3" size="1.09645e-12" units="volume" constant="true">
+        <annotation>
+          <moose:CompartmentAnnotation>
+            <moose:Mesh>CubeMesh</moose:Mesh>
+            <moose:isMembraneBound>False</moose:isMembraneBound>
+          </moose:CompartmentAnnotation>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="Sos_p_dot_Grb2_473_0_" name="Sos_p.Grb2" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Inactive complex of Sos* with Grb2 due to phosphorylation of the Sos. See Porfiri and McCormick 1996 JBC 271(10):5871.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>1000.0</moose:xCord>
+            <moose:yCord>635.8974358974359</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Grb2_475_0_" name="Grb2" compartment="kinetics_464_0_" initialConcentration="0.001" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	There is probably a lot of it in the cell: it is also known as Ash (abundant src homology protein). Also Waters et al JBC 271:30 18224 1996 say that only a small fraction of cellular Grb is precipitated out when SoS is precipitated. As most of the Sos seems to be associated with Grb2, it would seem like there is a lot of the latter. Say 1 uM. This would comfortably saturate the SoS.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>823.5294117647059</moose:xCord>
+            <moose:yCord>635.8974358974359</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Sos_dot_Grb2_477_0_" name="Sos.Grb2" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	For simplicity I treat the activation of Sos as involving a single complex comprising Sos, Grb2 and Shc*. This is reasonably documented: Sasaoka et al 1994 JBC 269(51):32621-5 Chook et al JBC 1996 271(48):30472
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>635.8974358974359</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Sos_p_479_0_" name="Sos_p" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Phosphorylated form of SoS. Nominally this is an inactivation step mediated by MAPK, see Profiri and McCormick 1996 JBC 271(10):5871. I have not put this inactivation in this pathway so this molecule currently only represents a potential interaction point.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>882.3529411764706</moose:xCord>
+            <moose:yCord>717.948717948718</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Sos_481_0_" name="Sos" compartment="kinetics_464_0_" initialConcentration="0.0001" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	I have tried using low (0.02 uM) initial concs, but these give a very flat response to EGF stim although the overall activation of Ras is not too bad. I am reverting to 0.1 because we expect a sharp initial response, followed by a decline.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>764.7058823529411</moose:xCord>
+            <moose:yCord>717.948717948718</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Shc_p_dot_Sos_dot_Grb2_483_0_" name="Shc_p.Sos.Grb2" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This three-way complex is one of the main GEFs for activating Ras.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>635.8974358974359</moose:yCord>
+            <moose:bgColor>brown</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Sos_dot_Ras_GEF_cplx_486_0_" name="Sos.Ras_GEF_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>352.94117647058823</moose:xCord>
+            <moose:yCord>420.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="craf_1_498_0_" name="craf_1" compartment="kinetics_464_0_" initialConcentration="0.000199993919771383" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Strom et al 1990 Oncogene 5 pp 345-51 report high general expression in all tissues. Huang and Ferrell 1996 PNAS 93(19):10078 use a value of 3 nM for oocytes. Here we stick with a much higher expression based on the Strom report.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>235.2941176470588</moose:xCord>
+            <moose:yCord>246.15384615384616</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKK_500_0_" name="MAPKK" compartment="kinetics_464_0_" initialConcentration="0.000180005168194324" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Conc is from Seger et al JBC 267:20 pp14373 (1992) mwt is 45/46 Kd We assume that phosphorylation on both ser and thr is needed for activiation. See Kyriakis et al Nature 358 417 1992 Init conc of total is 0.18
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>164.1025641025641</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPK_502_0_" name="MAPK" compartment="kinetics_464_0_" initialConcentration="0.000359995135817107" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Mol wt is 42 KDa. conc is from Sanghera et al JBC 265 pp 52 (1990) They estimate MAPK is 1e-4x total protein, and protein is 15% of cell wt, so MAPK is 1.5e-5g/ml = 0.36uM. Lets use this. Note though that Huang and Ferrell 1996 PNAS 93(19):10078 report 1.2 uM in oocytes. Also note that brain concs may be high. Ortiz et al 1995 J. Neurosci 15(2):1285-1297 report 0.3 ng/ug protein in Cingulate Gyrus and 1.2 ng/ug protein in nucleus accumbens. In hippocampus 270 ng/mg protein for ERK1 and 820 ng/mg protein for ERK 2. If 15% of cell weight is protein, that means that about 300 * 0.15 ng/ul is ERK 1. ie, 45e-9g/1e-6 litre = 45 mg/litre or about 1 uM. For non-neuronal tissues a lower value may be better.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>82.05128205128204</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPK_tyr_504_0_" name="MAPK_tyr" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Haystead et al FEBS Lett. 306(1) pp 17-22 show that phosphorylation is strictly sequential, first tyr185 then thr183.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>41.02564102564102</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKK_p_506_0_" name="MAPKK_p" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	MAPKK phosphorylates MAPK on both the tyr and thr residues, first tyr then thr. Refs: Seger et al JBC267:20 pp 14373 1992 The MAPKK itself is phosphorylated on ser as well as thr residues. Let us assume that the ser goes first, and that the sequential phosphorylation is needed. See Kyriakis et al Nature 358 417-421 1992
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>82.05128205128204</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKKtyr_cplx_509_0_" name="MAPKKtyr_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>71.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKKthr_cplx_512_0_" name="MAPKKthr_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>30.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKK_ser_514_0_" name="MAPKK_ser" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Intermediately phophorylated, assumed inactive, form of MAPKK
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>123.07692307692308</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="RGR_516_0_" name="RGR" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Shorthand name for Raf.GTP.Ras. This refers to the complex between GTP.Ras and the unphosphorylated Raf. I treat this as having the same enzyme activity as the Raf*.GTP.Ras form.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>164.1025641025641</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>brown</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="RGR_dot_1_cplx_519_0_" name="RGR.1_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>153.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="RGR_dot_2_cplx_522_0_" name="RGR.2_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>112.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MKP_2_524_0_" name="MKP_2" compartment="kinetics_464_0_" initialConcentration="2.40017024640127e-06" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	MKP2 is modeled to act as a relatively steady, unregulated phosphatase for controlling MAPK activity. From Brondello et al JBC 272(2):1368-1376 (1997), the blockage of MKP-1 induction increases MAPK activity by no more than 2x. So this phosphatase will play the steady role and the fully stimulated MKP-1 can come up to the level of this steady level. From Chu et al 1995 JBC 271(11):6497-6501 it looks like both MKP-1 and MKP-2 have similar activities in dephosphorylating ERK2. So I use the same enzymatic rates for both. 31 Jan 2002: For the purposes of making a bistable model without the complications of MKP-1 induction, I simply set the initial conc of MKP-2 up by 0.0004 uM which was the starting level of MKP-1.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>41.02564102564102</moose:yCord>
+            <moose:bgColor>4</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MKP2_tyr_deph_cplx_527_0_" name="MKP2_tyr_deph_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>71.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MKP2_thr_deph_cplx_530_0_" name="MKP2_thr_deph_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>30.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="PPhosphatase2A_532_0_" name="PPhosphatase2A" compartment="kinetics_464_0_" initialConcentration="0.000223995622235396" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Refs: Pato et al Biochem J 293:35-41(93); CoInit values span a range depending on source. Pato et al 1993 Biochem J 293:35-41 and Cohen et al 1988 Meth Enz 159:390-408 estimate 80 nM from muscle Zolneierowicz et al 1994 Biochem 33:11858-11867 report levels of 0.4 uM again from muscle, but expression is also strong in brain. Our estimate of 0.224 is between these two. There are many substrates for PP2A in this model, so I put the enzyme rate calculations here: Takai_andMieskes Biochem J 275:233-239 have mol wt 36 KDa. They report Vmax of 119 umol/min/mg i.e. 125/sec for k3 for pNPP substrate, Km of 16 mM. This is obviously unreasonable for protein substrates. For chicken gizzard myosin light chan, we have Vmax = 13 umol/min/mg or about k3 = 14/sec. Pato et al 1993 Biochem J 293:35-41 report caldesmon: Km = 2.2 uM, Vmax = 0.24 umol/min/mg. They do not think caldesmon is a good substrate. Calponin: Km = 14.3, Vmax = 5. Our values approximate these.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>123.07692307692308</moose:yCord>
+            <moose:bgColor>hotpink</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKK_deph_cplx_535_0_" name="MAPKK_deph_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>112.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPKK_deph_ser_cplx_538_0_" name="MAPKK_deph_ser_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>153.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPK_p_540_0_" name="MAPK_p" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This molecule is phosphorylated on both the tyr and thr residues and is active: Seger et al 1992 JBC 267(20):14373 The rate consts are from two sources: Combine Sanghera et al JBC 265(1) :52-57 with Nemenoff et al JBC 93 pp 1960 to get k3 = 10, k2 = 40, k1 = 3.25e-6
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>0.0</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPK_phosph_Sos_cplx_543_0_" name="MAPK_phosph_Sos_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>823.5294117647059</moose:xCord>
+            <moose:yCord>768.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_" name="MAPK_phosph_SHC_p_Sos_Grb2_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>584.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="GTP_Ras_550_0_" name="GTP_Ras" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Only a very small fraction (7% unstim, 15% stim) of ras is GTP-bound. Gibbs et al JBC 265(33) 20437
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>369.2307692307692</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="GDP_Ras_552_0_" name="GDP_Ras" compartment="kinetics_464_0_" initialConcentration="0.000199993919771383" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	GDP bound form. See Rosen et al Neuron 12 1207-1221 June 1994. the activation loop is based on Boguski and McCormick Nature 366 643-654 93 Assume Ras is present at about the same level as craf-1, 0.2 uM. Hallberg et al JBC 269:6 3913-3916 1994 estimate upto 5-10% of cellular Raf is assoc with Ras. Given that only 5-10% of Ras is GTP-bound, we need similar amounts of Ras as Raf.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>451.28205128205127</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="SHC_562_0_" name="SHC" compartment="kinetics_464_0_" initialConcentration="0.000500007600285771" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	There are 2 isoforms: 52 KDa and 46 KDa (See Okada et al JBC 270:35 pp 20737 1995). They are acted up on by the EGFR in very similar ways, and apparently both bind Grb2 similarly, so we&apos;ll bundle them together here. Sasaoka et al JBC 269:51 pp 32621 1994 show immunoprecs where it looks like there is at least as much Shc as Grb2. So we&apos;ll tentatively say there is 1 uM of Shc.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>235.2941176470588</moose:xCord>
+            <moose:yCord>717.948717948718</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="SHC_p_564_0_" name="SHC_p" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Phosphorylated form of SHC. Binds to the SoS.Grb2 complex to give the activated GEF form upstream of Ras.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>352.94117647058823</moose:xCord>
+            <moose:yCord>717.948717948718</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="EGFR_566_0_" name="EGFR" compartment="kinetics_464_0_" initialConcentration="0.000108334473376199" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Berkers et al JBC 266 say 22K high affinity receptors per cell. Sherrill and Kyte Biochemistry 35 use range 4-200 nM. These values match reasonably. Heidaran et al 1993 JBC 268(13):9287-9295 use NIH3T3 cells and have 6.5e4 receptors/cell. This is also in the same general range. We use this last value because the cell type matches.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>0.0</moose:xCord>
+            <moose:yCord>800.0</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Internal_L_EGFR_568_0_" name="Internal_L_EGFR" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The internalized PDGFR is treated as a generic pool in equilibrium with the surface receptor. This simplifies the turnover processes but fits reasonably well with data.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>117.6470588235294</moose:xCord>
+            <moose:yCord>800.0</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="EGF_570_0_" name="EGF" compartment="kinetics_464_0_" initialConcentration="1.99993919771383e-08" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Platelet-derived growth factor. Heterodimer Mol wt. is approx 30 KDa Deuel et al 1985 Cancer Surv. 4(4):633-53 Conc of 50 ng/ml is close to saturating, and is used by P. Ram (personal communication). Other refs use 65 ng/ml Weise RJ et al 1995 JBC 270(7):3442-3446 A stimulus of 5 min is commonly used. Conversion factor: 1ng/ml = (1e-9/30K)* 1000 Moles/litre = 3e-11M = 3e-5 uM So 50 ng/ml ~ 1.5 nM.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>0.0</moose:xCord>
+            <moose:yCord>717.948717948718</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="L_EGFR_572_0_" name="L_EGFR" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This is terribly simplified: there are many interesting intermediate stages, including dimerization and assoc with adapter molecules like Shc, that contribute to the activation of the EGFR.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>117.6470588235294</moose:xCord>
+            <moose:yCord>717.948717948718</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="phosph_Shc_cplx_575_0_" name="phosph_Shc_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>768.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="Shc_bind_Sos_dot_Grb2_488_0_" name="Shc_bind_Sos.Grb2" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Sasaoka et al JBC 269:51 pp 32621 1994, table on pg 32623 indicates that this pathway accounts for about 50% of the GEF activation. (88% - 39%). Error is large, about 20%. Fig 1 is most useful in constraining rates. Chook et al JBC 271:48 pp 30472, 1996 say that the Kd is 0.2 uM for Shc binding to EGFR. The Kd for Grb direct binding is 0.7, so we&apos;ll ignore it.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>588.2352941176471</moose:xCord>
+            <moose:yCord>676.9230769230769</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Sos_dot_Grb2_477_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="SHC_p_564_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Shc_p_dot_Sos_dot_Grb2_483_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Shc_bind_Sos_dot_Grb2_488_0__Kf * Sos_dot_Grb2_477_0_*SHC_p_564_0_-kinetics_464_0_ * Shc_bind_Sos_dot_Grb2_488_0__Kb * Shc_p_dot_Sos_dot_Grb2_483_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Shc_bind_Sos_dot_Grb2_488_0__Kf </ci>
+                <ci> Sos_dot_Grb2_477_0_ </ci>
+                <ci> SHC_p_564_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Shc_bind_Sos_dot_Grb2_488_0__Kb </ci>
+                <ci> Shc_p_dot_Sos_dot_Grb2_483_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Shc_bind_Sos_dot_Grb2_488_0__Kf" value="121008.6078" units="litre_per_mmole_per_second"/>
+            <localParameter id="Shc_bind_Sos_dot_Grb2_488_0__Kb" value="23.567" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Grb2_bind_Sos_p_490_0_" name="Grb2_bind_Sos_p" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Same rates as Grb2_bind_Sos: Porfiri and McCormick JBC 271:10 pp 5871 1996 show that the binding is not affected by the phosphorylation.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>941.1764705882352</moose:xCord>
+            <moose:yCord>676.9230769230769</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Grb2_475_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Sos_p_479_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Sos_p_dot_Grb2_473_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Grb2_bind_Sos_p_490_0__Kf * Grb2_475_0_*Sos_p_479_0_-kinetics_464_0_ * Grb2_bind_Sos_p_490_0__Kb * Sos_p_dot_Grb2_473_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Grb2_bind_Sos_p_490_0__Kf </ci>
+                <ci> Grb2_475_0_ </ci>
+                <ci> Sos_p_479_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Grb2_bind_Sos_p_490_0__Kb </ci>
+                <ci> Sos_p_dot_Grb2_473_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Grb2_bind_Sos_p_490_0__Kf" value="25.00037574" units="litre_per_mmole_per_second"/>
+            <localParameter id="Grb2_bind_Sos_p_490_0__Kb" value="0.0168" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="dephosph_Sos_492_0_" name="dephosph_Sos" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The best clue I have to these rates is from the time courses of the EGF activation, which is around 1 to 5 min. The dephosph would be expected to be of the same order, perhaps a bit longer. Lets use 0.002 which is about 8 min. Sep 17: The transient activation curve matches better with kf = 0.001
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>823.5294117647059</moose:xCord>
+            <moose:yCord>676.9230769230769</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Sos_p_479_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Sos_481_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * dephosph_Sos_492_0__Kf * Sos_p_479_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> dephosph_Sos_492_0__Kf </ci>
+              <ci> Sos_p_479_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="dephosph_Sos_492_0__Kf" value="0.015377" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Grb2_bind_Sos_494_0_" name="Grb2_bind_Sos" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	As there are 2 SH3 domains, this reaction could be 2nd order. I have a Kd of 22 uM from peptide binding (Lemmon et al JBC 269:50 pg 31653). However, Chook et al JBC 271:48 pg30472 say it is 0.4uM with purified proteins, so we believe them. They say it is 1:1 binding. Porfiri and McCormick JBC 271 also have related data. After comparing with the time-course of 1 min and the efficacy of activation of Ras, settle on Kd of 0.672 which is close to the Chook et al value.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>705.8823529411765</moose:xCord>
+            <moose:yCord>676.9230769230769</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Grb2_475_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Sos_481_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Sos_dot_Grb2_477_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Grb2_bind_Sos_494_0__Kf * Grb2_475_0_*Sos_481_0_-kinetics_464_0_ * Grb2_bind_Sos_494_0__Kb * Sos_dot_Grb2_477_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Grb2_bind_Sos_494_0__Kf </ci>
+                <ci> Grb2_475_0_ </ci>
+                <ci> Sos_481_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Grb2_bind_Sos_494_0__Kb </ci>
+                <ci> Sos_dot_Grb2_477_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Grb2_bind_Sos_494_0__Kf" value="532.6576029" units="litre_per_mmole_per_second"/>
+            <localParameter id="Grb2_bind_Sos_494_0__Kb" value="0.15081" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Ras_intrinsic_GTPase_554_0_" name="Ras_intrinsic_GTPase" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This is extremely slow (kf = 1e-4), but it is significant as so little GAP actually gets complexed with it that the total GTP turnover rises only by 2-3 X (see Gibbs et al, JBC 265(33) 20437-20422) and Eccleston et al JBC 268(36) 27012-27019 There is no back reaction as we assume this to be a regular irreversible Michaelis-Menten zeroth order hydrolysis.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>235.2941176470588</moose:xCord>
+            <moose:yCord>410.2564102564102</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="GTP_Ras_550_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="GDP_Ras_552_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Ras_intrinsic_GTPase_554_0__Kf * GTP_Ras_550_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> Ras_intrinsic_GTPase_554_0__Kf </ci>
+              <ci> GTP_Ras_550_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Ras_intrinsic_GTPase_554_0__Kf" value="0.044145" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Ras_act_unphosph_raf_556_0_" name="Ras_act_unphosph_raf" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Based on rates of Ras-act-craf which has Kf=60, Kb= 0.5. This reaction was introduced to account for the PKC-independent activation of MAPK. This reac should have less affinity but similar tau as compared to the Ras-cat-craf, since the phosphorylated Raf form has a greater effect on MAPK.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>205.1282051282051</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="craf_1_498_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="GTP_Ras_550_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RGR_516_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Ras_act_unphosph_raf_556_0__Kf * craf_1_498_0_*GTP_Ras_550_0_-kinetics_464_0_ * Ras_act_unphosph_raf_556_0__Kb * RGR_516_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Ras_act_unphosph_raf_556_0__Kf </ci>
+                <ci> craf_1_498_0_ </ci>
+                <ci> GTP_Ras_550_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Ras_act_unphosph_raf_556_0__Kb </ci>
+                <ci> RGR_516_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Ras_act_unphosph_raf_556_0__Kf" value="5999.905974" units="litre_per_mmole_per_second"/>
+            <localParameter id="Ras_act_unphosph_raf_556_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="basal_GEF_558_0_" name="basal_GEF" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This rate is based on the known ratio of GDP-Ras to GTP-Ras. Basal: Ras.GTP = 7% Stimulated 15% Time course is within 10 min, probably much faster as not all early data points are there. See Gibbs et al JBC 265(33):20437-20422
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>410.2564102564102</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="GDP_Ras_552_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="GTP_Ras_550_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * basal_GEF_558_0__Kf * GDP_Ras_552_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> basal_GEF_558_0__Kf </ci>
+              <ci> GDP_Ras_552_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="basal_GEF_558_0__Kf" value="0.0026822" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="dephosph_Shc_577_0_" name="dephosph_Shc" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Time course of decline of phosph is 20 min from Sasaoka et al 1994 JBC 269(51):32621. Part of this is the turnoff time of the EGFR itself. Lets assume a tau of 10 min for this dephosphorylation as a first pass. 27 Apr 2001: Dephosph too slow, shifts SHC balance over to phosphorylated form. Increase Kf to 0.01. This gives a reasonable overall time-course.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>676.9230769230769</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="SHC_p_564_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SHC_562_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * dephosph_Shc_577_0__Kf * SHC_p_564_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> dephosph_Shc_577_0__Kf </ci>
+              <ci> SHC_p_564_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="dephosph_Shc_577_0__Kf" value="0.05" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Internalize_579_0_" name="Internalize" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Original model derived from EGFR model. See Helin and Beguinot JBC 266:13 1991 pg 8363-8368. In Fig 3 they have internalization tau about 10 min, equil at about 20% EGF available. So kf = 4x kb, and 1/(kf + kb) = 600 sec so kb = 1/3K = 3.3e-4, and kf = 1.33e-3. This doesn&apos;t take into account the unbound receptor, so we need to push the kf up a bit, to 0.002 26 apr 2001: Keq too low for the PDGF model. Now Kf=0.001,Kb=0.00066 The previously calculated internalization equilibrium led to very high internalization which shifted the effective dependence of the receptor on PDGF so it looked like the receptor binding was higher affinity than experimentally determined. Used two constraining factors: 1. Time course of SHC phosphorylation/dephosphorylation which is fast on, but 10-20 minutes off. 2. Conc dependence of MAPK on PDGF has a halfmax around 3ng/ml. See Brondello et al 1997 JBC 272(2):1368-1376 and Brondello et al 1999 Science 286:2514-1517.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>758.9743589743589</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="L_EGFR_572_0_" stoichiometry="2" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Internal_L_EGFR_568_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Internalize_579_0__Kf * L_EGFR_572_0_^2-kinetics_464_0_ * Internalize_579_0__Kb * Internal_L_EGFR_568_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Internalize_579_0__Kf </ci>
+                <apply>
+                  <power/>
+                  <ci> L_EGFR_572_0_ </ci>
+                  <cn type="integer"> 2 </cn>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Internalize_579_0__Kb </ci>
+                <ci> Internal_L_EGFR_568_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Internalize_579_0__Kf" value="199.9990587" units="litre_per_mmole_per_second"/>
+            <localParameter id="Internalize_579_0__Kb" value="0.005" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="act_EGFR_581_0_" name="act_EGFR" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	From Heidaran et al JBC268(13):9287 Fig 5. Kd is ~0.5 nM
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>58.8235294117647</moose:xCord>
+            <moose:yCord>758.9743589743589</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>yellow</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="EGFR_566_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="EGF_570_0_" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="L_EGFR_572_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * act_EGFR_581_0__Kf * EGFR_566_0_*EGF_570_0_-kinetics_464_0_ * act_EGFR_581_0__Kb * L_EGFR_572_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> act_EGFR_581_0__Kf </ci>
+                <ci> EGFR_566_0_ </ci>
+                <ci> EGF_570_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> act_EGFR_581_0__Kb </ci>
+                <ci> L_EGFR_572_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="act_EGFR_581_0__Kf" value="26744.38911" units="litre_per_mmole_per_second"/>
+            <localParameter id="act_EGFR_581_0__Kb" value="0.013142" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Sos_dot_Ras_GEF_485_0_Complex_formation_" name="Sos.Ras_GEF" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Rates from Orita et al JBC 268(34):25542-25546
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>Shc_p_dot_Sos_dot_Grb2_483_0_</moose:enzyme>
+            <moose:substrates>GDP_Ras_552_0_</moose:substrates>
+            <moose:product>Sos_dot_Ras_GEF_cplx_486_0_</moose:product>
+            <moose:groupName>Sos_dot_Ras_GEF_485_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>352.94117647058823</moose:xCord>
+            <moose:yCord>410.2564102564102</moose:yCord>
+            <moose:bgColor>brown</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Shc_p_dot_Sos_dot_Grb2_483_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="GDP_Ras_552_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Sos_dot_Ras_GEF_cplx_486_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * Shc_p_dot_Sos_dot_Grb2_483_0_*GDP_Ras_552_0_ -  k2  * Sos_dot_Ras_GEF_cplx_486_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> Shc_p_dot_Sos_dot_Grb2_483_0_ </ci>
+                  <ci> GDP_Ras_552_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> Sos_dot_Ras_GEF_cplx_486_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="16101.1592470884" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="9.0414" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Sos_dot_Ras_GEF_485_0_Product_formation_" name="Sos.Ras_GEF" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>Sos_dot_Ras_GEF_cplx_486_0_</moose:complex>
+            <moose:enzyme>Shc_p_dot_Sos_dot_Grb2_483_0_</moose:enzyme>
+            <moose:product>GTP_Ras_550_0_</moose:product>
+            <moose:groupName>Sos_dot_Ras_GEF_485_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>352.94117647058823</moose:xCord>
+            <moose:yCord>410.2564102564102</moose:yCord>
+            <moose:bgColor>brown</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Sos_dot_Ras_GEF_cplx_486_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="GTP_Ras_550_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Shc_p_dot_Sos_dot_Grb2_483_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*Sos_dot_Ras_GEF_cplx_486_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> Sos_dot_Ras_GEF_cplx_486_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="2.2604" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKKtyr_508_0_Complex_formation_" name="MAPKKtyr" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The actual MAPKK is 2 forms from Seger et al JBC 267:20 14373(1992) Vmax = 150nmol/min/mg From Haystead et al FEBS 306(1):17-22 we get Km=46.6nM for at least one of the phosphs. Putting these together: k3=0.15/sec, ratio of 4 to get k2=0.6. k1=0.75/46.6nM=2.7e-5 In terms of Michaelis-Menten rates, Km = 0.046, Vmax = 0.15, ratio = 4.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>MAPKK_p_506_0_</moose:enzyme>
+            <moose:substrates>MAPK_502_0_</moose:substrates>
+            <moose:product>MAPKKtyr_cplx_509_0_</moose:product>
+            <moose:groupName>MAPKKtyr_508_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>61.53846153846154</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPKK_p_506_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPK_502_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKKtyr_cplx_509_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * MAPKK_p_506_0_*MAPK_502_0_ -  k2  * MAPKKtyr_cplx_509_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> MAPKK_p_506_0_ </ci>
+                  <ci> MAPK_502_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MAPKKtyr_cplx_509_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="10112.9568908336" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="0.39339" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKKtyr_508_0_Product_formation_" name="MAPKKtyr" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MAPKKtyr_cplx_509_0_</moose:complex>
+            <moose:enzyme>MAPKK_p_506_0_</moose:enzyme>
+            <moose:product>MAPK_tyr_504_0_</moose:product>
+            <moose:groupName>MAPKKtyr_508_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>61.53846153846154</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPKKtyr_cplx_509_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPK_tyr_504_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPKK_p_506_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MAPKKtyr_cplx_509_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MAPKKtyr_cplx_509_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.098347" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKKthr_511_0_Complex_formation_" name="MAPKKthr" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Rate consts same as for MAPKKtyr.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>MAPKK_p_506_0_</moose:enzyme>
+            <moose:substrates>MAPK_tyr_504_0_</moose:substrates>
+            <moose:product>MAPKKthr_cplx_512_0_</moose:product>
+            <moose:groupName>MAPKKthr_511_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>20.51282051282051</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPKK_p_506_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPK_tyr_504_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKKthr_cplx_512_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * MAPKK_p_506_0_*MAPK_tyr_504_0_ -  k2  * MAPKKthr_cplx_512_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> MAPKK_p_506_0_ </ci>
+                  <ci> MAPK_tyr_504_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MAPKKthr_cplx_512_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="865.261157015324" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="0.38071" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKKthr_511_0_Product_formation_" name="MAPKKthr" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MAPKKthr_cplx_512_0_</moose:complex>
+            <moose:enzyme>MAPKK_p_506_0_</moose:enzyme>
+            <moose:product>MAPK_p_540_0_</moose:product>
+            <moose:groupName>MAPKKthr_511_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>20.51282051282051</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPKKthr_cplx_512_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPK_p_540_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPKK_p_506_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MAPKKthr_cplx_512_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MAPKKthr_cplx_512_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.095179" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RGR_dot_1_518_0_Complex_formation_" name="RGR.1" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Kinetics are the same as for the craf-1* activity, ie., k1=5.5e-6, k2=.42, k3 =0.105 These are based on Force et al PNAS USA 91 1270-1274 1994.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>RGR_516_0_</moose:enzyme>
+            <moose:substrates>MAPKK_500_0_</moose:substrates>
+            <moose:product>RGR_dot_1_cplx_519_0_</moose:product>
+            <moose:groupName>RGR_dot_1_518_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>143.5897435897436</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="RGR_516_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPKK_500_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RGR_dot_1_cplx_519_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * RGR_516_0_*MAPKK_500_0_ -  k2  * RGR_dot_1_cplx_519_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> RGR_516_0_ </ci>
+                  <ci> MAPKK_500_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> RGR_dot_1_cplx_519_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="2998.62379155322" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="0.42" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RGR_dot_1_518_0_Product_formation_" name="RGR.1" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>RGR_dot_1_cplx_519_0_</moose:complex>
+            <moose:enzyme>RGR_516_0_</moose:enzyme>
+            <moose:product>MAPKK_ser_514_0_</moose:product>
+            <moose:groupName>RGR_dot_1_518_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>143.5897435897436</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="RGR_dot_1_cplx_519_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKK_ser_514_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="RGR_516_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*RGR_dot_1_cplx_519_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> RGR_dot_1_cplx_519_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.105" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RGR_dot_2_521_0_Complex_formation_" name="RGR.2" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Same kinetics as other c-raf activated forms. See Force et al PNAS 91 1270-1274 1994. k1 = 5.5e-6, k2 = .42, k3 = 0.105
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>RGR_516_0_</moose:enzyme>
+            <moose:substrates>MAPKK_ser_514_0_</moose:substrates>
+            <moose:product>RGR_dot_2_cplx_522_0_</moose:product>
+            <moose:groupName>RGR_dot_2_521_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>102.56410256410255</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="RGR_516_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPKK_ser_514_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RGR_dot_2_cplx_522_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * RGR_516_0_*MAPKK_ser_514_0_ -  k2  * RGR_dot_2_cplx_522_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> RGR_516_0_ </ci>
+                  <ci> MAPKK_ser_514_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> RGR_dot_2_cplx_522_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="2998.62379155322" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="0.42" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RGR_dot_2_521_0_Product_formation_" name="RGR.2" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>RGR_dot_2_cplx_522_0_</moose:complex>
+            <moose:enzyme>RGR_516_0_</moose:enzyme>
+            <moose:product>MAPKK_p_506_0_</moose:product>
+            <moose:groupName>RGR_dot_2_521_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>176.47058823529412</moose:xCord>
+            <moose:yCord>102.56410256410255</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="RGR_dot_2_cplx_522_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKK_p_506_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="RGR_516_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*RGR_dot_2_cplx_522_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> RGR_dot_2_cplx_522_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.105" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MKP2_tyr_deph_526_0_Complex_formation_" name="MKP2_tyr_deph" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	22 Apr 2001: Based on MKP1 parms. The original kinetics have been modified to obey the k2 = 4 * k3 rule, while keeping kcat and Km fixed. The only constraining data point is the time course of MAPK dephosphorylation, which this model satisfies. The rates are treated as the same as for MKP-1, based on Chu et al 1995 JBC 271(11):6497-6501
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>MKP_2_524_0_</moose:enzyme>
+            <moose:substrates>MAPK_tyr_504_0_</moose:substrates>
+            <moose:product>MKP2_tyr_deph_cplx_527_0_</moose:product>
+            <moose:groupName>MKP2_tyr_deph_526_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>61.53846153846154</moose:yCord>
+            <moose:bgColor>4</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MKP_2_524_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPK_tyr_504_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MKP2_tyr_deph_cplx_527_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * MKP_2_524_0_*MAPK_tyr_504_0_ -  k2  * MKP2_tyr_deph_cplx_527_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> MKP_2_524_0_ </ci>
+                  <ci> MAPK_tyr_504_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MKP2_tyr_deph_cplx_527_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="21846.1892003036" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="1.4324" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MKP2_tyr_deph_526_0_Product_formation_" name="MKP2_tyr_deph" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MKP2_tyr_deph_cplx_527_0_</moose:complex>
+            <moose:enzyme>MKP_2_524_0_</moose:enzyme>
+            <moose:product>MAPK_502_0_</moose:product>
+            <moose:groupName>MKP2_tyr_deph_526_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>61.53846153846154</moose:yCord>
+            <moose:bgColor>4</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MKP2_tyr_deph_cplx_527_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPK_502_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MKP_2_524_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MKP2_tyr_deph_cplx_527_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MKP2_tyr_deph_cplx_527_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.35808" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MKP2_thr_deph_529_0_Complex_formation_" name="MKP2_thr_deph" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	See MKP2-tyr-deph
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>MKP_2_524_0_</moose:enzyme>
+            <moose:substrates>MAPK_p_540_0_</moose:substrates>
+            <moose:product>MKP2_thr_deph_cplx_530_0_</moose:product>
+            <moose:groupName>MKP2_thr_deph_529_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>20.51282051282051</moose:yCord>
+            <moose:bgColor>4</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MKP_2_524_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPK_p_540_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MKP2_thr_deph_cplx_530_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * MKP_2_524_0_*MAPK_p_540_0_ -  k2  * MKP2_thr_deph_cplx_530_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> MKP_2_524_0_ </ci>
+                  <ci> MAPK_p_540_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MKP2_thr_deph_cplx_530_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="69038.6771217514" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="1.4006" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MKP2_thr_deph_529_0_Product_formation_" name="MKP2_thr_deph" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MKP2_thr_deph_cplx_530_0_</moose:complex>
+            <moose:enzyme>MKP_2_524_0_</moose:enzyme>
+            <moose:product>MAPK_tyr_504_0_</moose:product>
+            <moose:groupName>MKP2_thr_deph_529_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>647.0588235294118</moose:xCord>
+            <moose:yCord>20.51282051282051</moose:yCord>
+            <moose:bgColor>4</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MKP2_thr_deph_cplx_530_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPK_tyr_504_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MKP_2_524_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MKP2_thr_deph_cplx_530_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MKP2_thr_deph_cplx_530_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.35017" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKK_deph_534_0_Complex_formation_" name="MAPKK_deph" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	See: Kyriakis et al Nature 358 pp 417-421 1992 Ahn et al Curr Op Cell Biol 4:992-999 1992 for this pathway. See parent PPhosphatase2A for parms.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>PPhosphatase2A_532_0_</moose:enzyme>
+            <moose:substrates>MAPKK_p_506_0_</moose:substrates>
+            <moose:product>MAPKK_deph_cplx_535_0_</moose:product>
+            <moose:groupName>MAPKK_deph_534_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>102.56410256410255</moose:yCord>
+            <moose:bgColor>hotpink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="PPhosphatase2A_532_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPKK_p_506_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKK_deph_cplx_535_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * PPhosphatase2A_532_0_*MAPKK_p_506_0_ -  k2  * MAPKK_deph_cplx_535_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> PPhosphatase2A_532_0_ </ci>
+                  <ci> MAPKK_p_506_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MAPKK_deph_cplx_535_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="1799.2136020052" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="25" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKK_deph_534_0_Product_formation_" name="MAPKK_deph" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MAPKK_deph_cplx_535_0_</moose:complex>
+            <moose:enzyme>PPhosphatase2A_532_0_</moose:enzyme>
+            <moose:product>MAPKK_ser_514_0_</moose:product>
+            <moose:groupName>MAPKK_deph_534_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>102.56410256410255</moose:yCord>
+            <moose:bgColor>hotpink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPKK_deph_cplx_535_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKK_ser_514_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="PPhosphatase2A_532_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MAPKK_deph_cplx_535_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MAPKK_deph_cplx_535_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="6" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKK_deph_ser_537_0_Complex_formation_" name="MAPKK_deph_ser" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	See parent PPhostphatase2A description for rate details
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>PPhosphatase2A_532_0_</moose:enzyme>
+            <moose:substrates>MAPKK_ser_514_0_</moose:substrates>
+            <moose:product>MAPKK_deph_ser_cplx_538_0_</moose:product>
+            <moose:groupName>MAPKK_deph_ser_537_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>143.5897435897436</moose:yCord>
+            <moose:bgColor>hotpink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="PPhosphatase2A_532_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPKK_ser_514_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKK_deph_ser_cplx_538_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * PPhosphatase2A_532_0_*MAPKK_ser_514_0_ -  k2  * MAPKK_deph_ser_cplx_538_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> PPhosphatase2A_532_0_ </ci>
+                  <ci> MAPKK_ser_514_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MAPKK_deph_ser_cplx_538_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="50.984273235692" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="1.7125" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPKK_deph_ser_537_0_Product_formation_" name="MAPKK_deph_ser" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MAPKK_deph_ser_cplx_538_0_</moose:complex>
+            <moose:enzyme>PPhosphatase2A_532_0_</moose:enzyme>
+            <moose:product>MAPKK_500_0_</moose:product>
+            <moose:groupName>MAPKK_deph_ser_537_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>529.4117647058823</moose:xCord>
+            <moose:yCord>143.5897435897436</moose:yCord>
+            <moose:bgColor>hotpink</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPKK_deph_ser_cplx_538_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPKK_500_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="PPhosphatase2A_532_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MAPKK_deph_ser_cplx_538_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MAPKK_deph_ser_cplx_538_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.41099" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPK_phosph_Sos_542_0_Complex_formation_" name="MAPK_phosph_Sos" reversible="true" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>MAPK_p_540_0_</moose:enzyme>
+            <moose:substrates>Sos_481_0_</moose:substrates>
+            <moose:product>MAPK_phosph_Sos_cplx_543_0_</moose:product>
+            <moose:groupName>MAPK_phosph_Sos_542_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>823.5294117647059</moose:xCord>
+            <moose:yCord>758.9743589743589</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPK_p_540_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Sos_481_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPK_phosph_Sos_cplx_543_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * MAPK_p_540_0_*Sos_481_0_ -  k2  * MAPK_phosph_Sos_cplx_543_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> MAPK_p_540_0_ </ci>
+                  <ci> Sos_481_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MAPK_phosph_Sos_cplx_543_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="249.078018542075" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="2" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPK_phosph_Sos_542_0_Product_formation_" name="MAPK_phosph_Sos" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MAPK_phosph_Sos_cplx_543_0_</moose:complex>
+            <moose:enzyme>MAPK_p_540_0_</moose:enzyme>
+            <moose:product>Sos_p_479_0_</moose:product>
+            <moose:groupName>MAPK_phosph_Sos_542_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>823.5294117647059</moose:xCord>
+            <moose:yCord>758.9743589743589</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPK_phosph_Sos_cplx_543_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Sos_p_479_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPK_p_540_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MAPK_phosph_Sos_cplx_543_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MAPK_phosph_Sos_cplx_543_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.5" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPK_phosph_SHC_p_Sos_Grb2_545_0_Complex_formation_" name="MAPK_phosph_SHC_p_Sos_Grb2" reversible="true" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>MAPK_p_540_0_</moose:enzyme>
+            <moose:substrates>Shc_p_dot_Sos_dot_Grb2_483_0_</moose:substrates>
+            <moose:product>MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_</moose:product>
+            <moose:groupName>MAPK_phosph_SHC_p_Sos_Grb2_545_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>574.3589743589744</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>orange</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPK_p_540_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Shc_p_dot_Sos_dot_Grb2_483_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * MAPK_p_540_0_*Shc_p_dot_Sos_dot_Grb2_483_0_ -  k2  * MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> MAPK_p_540_0_ </ci>
+                  <ci> Shc_p_dot_Sos_dot_Grb2_483_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="249.078018542075" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="2" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MAPK_phosph_SHC_p_Sos_Grb2_545_0_Product_formation_" name="MAPK_phosph_SHC_p_Sos_Grb2" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_</moose:complex>
+            <moose:enzyme>MAPK_p_540_0_</moose:enzyme>
+            <moose:product>Sos_p_dot_Grb2_473_0_</moose:product>
+            <moose:product>SHC_p_564_0_</moose:product>
+            <moose:groupName>MAPK_phosph_SHC_p_Sos_Grb2_545_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>470.5882352941176</moose:xCord>
+            <moose:yCord>574.3589743589744</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>orange</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Sos_p_dot_Grb2_473_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="SHC_p_564_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="MAPK_p_540_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.5" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="phosph_Shc_574_0_Complex_formation_" name="phosph_Shc" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Rates from Okada et al JBC 270:35 pp 20737 1995 Km = 0.70 to 0.85 uM, Vmax = 4.4 to 5.0 pmol/min. Unfortunately the amount of enzyme is not known, the prep is only partially purified. Tau phosph is max within 30 sec, falls back within 20 min. Ref: Sasaoka et al JBC 269:51 32621 1994. Use k3 = 0.1 based on this tau. 27 Apr 2001: Lowered k3 to 0.05 to fix conc-effect of SHC phosph by PDGF. This gives results for downstream effects in agreement with other papers, e.g., the Brondello papers.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:enzyme>L_EGFR_572_0_</moose:enzyme>
+            <moose:substrates>SHC_562_0_</moose:substrates>
+            <moose:product>phosph_Shc_cplx_575_0_</moose:product>
+            <moose:groupName>phosph_Shc_574_0_</moose:groupName>
+            <moose:stage>1</moose:stage>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>758.9743589743589</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="L_EGFR_572_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="SHC_562_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="phosph_Shc_cplx_575_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( k1 * L_EGFR_572_0_*SHC_562_0_ -  k2  * phosph_Shc_cplx_575_0_ )
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> L_EGFR_572_0_ </ci>
+                  <ci> SHC_562_0_ </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> phosph_Shc_cplx_575_0_ </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k1" value="495.324487808863" units="litre_per_mmole_per_second"/>
+            <localParameter id="k2" value="0.76212" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="phosph_Shc_574_0_Product_formation_" name="phosph_Shc" reversible="false" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:complex>phosph_Shc_cplx_575_0_</moose:complex>
+            <moose:enzyme>L_EGFR_572_0_</moose:enzyme>
+            <moose:product>SHC_p_564_0_</moose:product>
+            <moose:groupName>phosph_Shc_574_0_</moose:groupName>
+            <moose:stage>2</moose:stage>
+            <moose:xCord>294.11764705882354</moose:xCord>
+            <moose:yCord>758.9743589743589</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="phosph_Shc_cplx_575_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SHC_p_564_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="L_EGFR_572_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * k3*phosph_Shc_cplx_575_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> k3 </ci>
+              <ci> phosph_Shc_cplx_575_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="k3" value="0.19053" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <groups:listOfGroups>
+      <groups:group groups:id="Sos_471_0_" groups:name="Sos" groups:kind="collection">
+        <annotation>
+          <moose:GroupAnnotation>
+            <moose:Compartment>kinetics_464_0_</moose:Compartment>
+            <moose:Parent>kinetics_464_0_</moose:Parent>
+            <moose:bgColor>#FFA500</moose:bgColor>
+          </moose:GroupAnnotation>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:idRef="Sos_p_dot_Grb2_473_0_"/>
+          <groups:member groups:idRef="Grb2_475_0_"/>
+          <groups:member groups:idRef="Sos_dot_Grb2_477_0_"/>
+          <groups:member groups:idRef="Sos_p_479_0_"/>
+          <groups:member groups:idRef="Sos_481_0_"/>
+          <groups:member groups:idRef="Shc_p_dot_Sos_dot_Grb2_483_0_"/>
+          <groups:member groups:idRef="Sos_dot_Ras_GEF_cplx_486_0_"/>
+          <groups:member groups:idRef="Shc_bind_Sos_dot_Grb2_488_0_"/>
+          <groups:member groups:idRef="Grb2_bind_Sos_p_490_0_"/>
+          <groups:member groups:idRef="dephosph_Sos_492_0_"/>
+          <groups:member groups:idRef="Grb2_bind_Sos_494_0_"/>
+          <groups:member groups:idRef="Sos_dot_Ras_GEF_cplx_486_0_"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="MAPK_496_0_" groups:name="MAPK" groups:kind="collection">
+        <annotation>
+          <moose:GroupAnnotation>
+            <moose:Compartment>kinetics_464_0_</moose:Compartment>
+            <moose:Parent>kinetics_464_0_</moose:Parent>
+            <moose:bgColor>#FFA500</moose:bgColor>
+          </moose:GroupAnnotation>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:idRef="craf_1_498_0_"/>
+          <groups:member groups:idRef="MAPKK_500_0_"/>
+          <groups:member groups:idRef="MAPK_502_0_"/>
+          <groups:member groups:idRef="MAPK_tyr_504_0_"/>
+          <groups:member groups:idRef="MAPKK_p_506_0_"/>
+          <groups:member groups:idRef="MAPKKtyr_cplx_509_0_"/>
+          <groups:member groups:idRef="MAPKKthr_cplx_512_0_"/>
+          <groups:member groups:idRef="MAPKK_ser_514_0_"/>
+          <groups:member groups:idRef="RGR_516_0_"/>
+          <groups:member groups:idRef="RGR_dot_1_cplx_519_0_"/>
+          <groups:member groups:idRef="RGR_dot_2_cplx_522_0_"/>
+          <groups:member groups:idRef="MKP_2_524_0_"/>
+          <groups:member groups:idRef="MKP2_tyr_deph_cplx_527_0_"/>
+          <groups:member groups:idRef="MKP2_thr_deph_cplx_530_0_"/>
+          <groups:member groups:idRef="PPhosphatase2A_532_0_"/>
+          <groups:member groups:idRef="MAPKK_deph_cplx_535_0_"/>
+          <groups:member groups:idRef="MAPKK_deph_ser_cplx_538_0_"/>
+          <groups:member groups:idRef="MAPK_p_540_0_"/>
+          <groups:member groups:idRef="MAPK_phosph_Sos_cplx_543_0_"/>
+          <groups:member groups:idRef="MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_"/>
+          <groups:member groups:idRef="MAPKKtyr_cplx_509_0_"/>
+          <groups:member groups:idRef="MAPKKthr_cplx_512_0_"/>
+          <groups:member groups:idRef="RGR_dot_1_cplx_519_0_"/>
+          <groups:member groups:idRef="RGR_dot_2_cplx_522_0_"/>
+          <groups:member groups:idRef="MKP2_tyr_deph_cplx_527_0_"/>
+          <groups:member groups:idRef="MKP2_thr_deph_cplx_530_0_"/>
+          <groups:member groups:idRef="MAPKK_deph_cplx_535_0_"/>
+          <groups:member groups:idRef="MAPKK_deph_ser_cplx_538_0_"/>
+          <groups:member groups:idRef="MAPK_phosph_Sos_cplx_543_0_"/>
+          <groups:member groups:idRef="MAPK_phosph_SHC_p_Sos_Grb2_cplx_546_0_"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="Ras_548_0_" groups:name="Ras" groups:kind="collection">
+        <annotation>
+          <moose:GroupAnnotation>
+            <moose:Compartment>kinetics_464_0_</moose:Compartment>
+            <moose:Parent>kinetics_464_0_</moose:Parent>
+            <moose:bgColor>#FFA500</moose:bgColor>
+          </moose:GroupAnnotation>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:idRef="GTP_Ras_550_0_"/>
+          <groups:member groups:idRef="GDP_Ras_552_0_"/>
+          <groups:member groups:idRef="Ras_intrinsic_GTPase_554_0_"/>
+          <groups:member groups:idRef="Ras_act_unphosph_raf_556_0_"/>
+          <groups:member groups:idRef="basal_GEF_558_0_"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="EGFR_560_0_" groups:name="EGFR" groups:kind="collection">
+        <annotation>
+          <moose:GroupAnnotation>
+            <moose:Compartment>kinetics_464_0_</moose:Compartment>
+            <moose:Parent>kinetics_464_0_</moose:Parent>
+            <moose:bgColor>#FFA500</moose:bgColor>
+          </moose:GroupAnnotation>
+        </annotation>
+        <groups:listOfMembers>
+          <groups:member groups:idRef="SHC_562_0_"/>
+          <groups:member groups:idRef="SHC_p_564_0_"/>
+          <groups:member groups:idRef="EGFR_566_0_"/>
+          <groups:member groups:idRef="Internal_L_EGFR_568_0_"/>
+          <groups:member groups:idRef="EGF_570_0_"/>
+          <groups:member groups:idRef="L_EGFR_572_0_"/>
+          <groups:member groups:idRef="phosph_Shc_cplx_575_0_"/>
+          <groups:member groups:idRef="dephosph_Shc_577_0_"/>
+          <groups:member groups:idRef="Internalize_579_0_"/>
+          <groups:member groups:idRef="act_EGFR_581_0_"/>
+          <groups:member groups:idRef="phosph_Shc_cplx_575_0_"/>
+        </groups:listOfMembers>
+      </groups:group>
+    </groups:listOfGroups>
+  </model>
+</sbml>

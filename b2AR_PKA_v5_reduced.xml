@@ -1,0 +1,2651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:moose="http://www.moose.ncbs.res.in" level="3" version="1">
+  <model id="b2AR_PKA_v5" substanceUnits="substance" timeUnits="time" volumeUnits="volume" areaUnits="area" lengthUnits="length" extentUnits="substance">
+    <annotation>
+      <moose:ModelAnnotation>
+        <moose:runTime> 100.0 </moose:runTime>
+        <moose:solver> ee </moose:solver>
+        <moose:simdt>0.001 </moose:simdt>
+        <moose:plotdt> 0.1 </moose:plotdt>
+        <moose:plots/>
+      </moose:ModelAnnotation>
+    </annotation>
+    <listOfUnitDefinitions>
+      <unitDefinition id="volume">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="length">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="litre_per_mmole_per_second">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="-3" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_second">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_litre">
+        <listOfUnits>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="kinetics_464_0_" name="kinetics" spatialDimensions="3" size="1.4614e-12" units="volume" constant="true">
+        <annotation>
+          <moose:CompartmentAnnotation>
+            <moose:Mesh>CubeMesh</moose:Mesh>
+            <moose:isMembraneBound>False</moose:isMembraneBound>
+          </moose:CompartmentAnnotation>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="CaM_Ca4_473_0_" name="CaM_Ca4" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>34.26977485554889</moose:xCord>
+            <moose:yCord>303.4788634788635</moose:yCord>
+            <moose:bgColor>blue</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="CaM_475_0_" name="CaM" compartment="kinetics_464_0_" initialConcentration="0.0202226175813147" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	There is a LOT of this in the cell: upto 1% of total protein mass. (Alberts et al) Say 25 uM. Meyer et al Science 256 1199-1202 1992 refer to studies saying it is comparable to CaMK levels.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>0.0</moose:xCord>
+            <moose:yCord>174.30353430353426</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="neurogranin_CaM_477_0_" name="neurogranin_CaM" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>11.556086869894084</moose:xCord>
+            <moose:yCord>174.30353430353426</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="neurogranin_p_479_0_" name="neurogranin_p" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The phosph form does not bind CaM (Huang et al ABB 305:2 570-580 1993)
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>20.32277346084898</moose:xCord>
+            <moose:yCord>174.30353430353426</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="neurogranin_481_0_" name="neurogranin" compartment="kinetics_464_0_" initialConcentration="0.0101110806988732" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Also known as RC3 and p17 and BICKS. Conc in brain _greaterthan__greaterthan_ 2 uM from Martzen and Slemmon J neurosci 64 92-100 1995 but others say less without any #s. Conc in dend spines is much higher than overall, so it could be anywhere from 2 uM to 50. We will estimate 10 uM as a starting point. Gerendasy et al JBC 269:35 22420-22426 1994 have a skeleton model (no numbers) indicating CaM-Ca(n) binding ....
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>30.085674437138692</moose:xCord>
+            <moose:yCord>174.30353430353426</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="CaM_Ca3_483_0_" name="CaM_Ca3" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>38.85236102809302</moose:xCord>
+            <moose:yCord>174.30353430353426</moose:yCord>
+            <moose:bgColor>hotpink</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="CaM_Ca2_485_0_" name="CaM_Ca2" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This is the intermediate where the TR2 end (the high-affinity end) has bound the Ca but the TR1 end has not.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>2.5901574018727924</moose:xCord>
+            <moose:yCord>349.60498960498956</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="CaM_Ca_487_0_" name="CaM_Ca" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This is the intermediate where the TR2 end (the high-affinity end) has bound the Ca but the TR1 end has not.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>11.556086869894084</moose:xCord>
+            <moose:yCord>349.60498960498956</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="PKA_active_503_0_" name="PKA_active" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>468.22076110779045</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>yellow</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="phosph_PDE_cplx_506_0_" name="phosph_PDE_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>764.6941621837019</moose:xCord>
+            <moose:yCord>248.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2C2_508_0_" name="R2C2" compartment="kinetics_464_0_" initialConcentration="0.000505565439532868" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This is the R2C2 complex, consisting of 2 catalytic (C) subunits, and the R-dimer. See Taylor et al Ann Rev Biochem 1990 59:971-1005 for a review. The Doskeland and Ogreid review is better for numbers. Amount of PKA is about .5 uM.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>477.3859334528792</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>52</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2C2_cAMP_510_0_" name="R2C2_cAMP" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	CoInit was .0624
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>486.5511057979675</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>49</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2C2_cAMP2_512_0_" name="R2C2_cAMP2" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>495.91552102012326</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>52</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2C2_cAMP3_514_0_" name="R2C2_cAMP3" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>505.8776648734805</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>47</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2C2_cAMP4_516_0_" name="R2C2_cAMP4" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>514.6443514644349</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>23</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2C_cAMP4_518_0_" name="R2C_cAMP4" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>524.4072524407252</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>0</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="R2_cAMP4_520_0_" name="R2_cAMP4" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Starts at 0.15 for the test of fig 6 in Smith et al, but we aren&apos;t using that paper any more.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>533.1739390316794</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>23</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="PKA_inhibitor_522_0_" name="PKA_inhibitor" compartment="kinetics_464_0_" initialConcentration="0.000252782719766434" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	About 25% of PKA C subunit is dissociated in resting cells without having any noticable activity. Doskeland and Ogreid Int J biochem 13 pp1-19 suggest that this is because there is a corresponding amount of inhibitor protein.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>542.7375971309027</moose:xCord>
+            <moose:yCord>409.92376992376984</moose:yCord>
+            <moose:bgColor>cyan</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="inhibited_PKA_524_0_" name="inhibited_PKA" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>511.2572225542936</moose:xCord>
+            <moose:yCord>498.2952182952182</moose:yCord>
+            <moose:bgColor>cyan</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="cAMP_542_0_" name="cAMP" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The conc of this has been a problem. Schaecter and Benowitz use 50 uM, but Shinomura et al have _lessthan_ 5. So I have altered the cAMP-dependent rates in the PKA model to reflect this.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>721.0599721059972</moose:xCord>
+            <moose:yCord>99.79209979209979</moose:yCord>
+            <moose:bgColor>green</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="ATP_544_0_" name="ATP" compartment="kinetics_464_0_" initialConcentration="5.05565439532868" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	ATP is present in all cells between 2 and 10 mM. See Lehninger.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>661.2871089858537</moose:xCord>
+            <moose:yCord>55.44005544005544</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC1_CaM_546_0_" name="AC1_CaM" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This version of cyclase is Calmodulin activated. Gs stims it but betagamma inhibits.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>811.3169954174139</moose:xCord>
+            <moose:yCord>14.968814968814984</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC1_550_0_" name="AC1" compartment="kinetics_464_0_" initialConcentration="2.02226175813147e-05" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Starting conc at 20 nM.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>657.8999800757125</moose:xCord>
+            <moose:yCord>16.521136521136544</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC2p_552_0_" name="AC2p" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This version is activated by Gs and by a betagamma and phosphorylation.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>734.8077306236302</moose:xCord>
+            <moose:yCord>15.523215523215505</moose:yCord>
+            <moose:bgColor>yellow</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC2_Gs_556_0_" name="AC2_Gs" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>768.4797768479776</moose:xCord>
+            <moose:yCord>13.08385308385308</moose:yCord>
+            <moose:bgColor>yellow</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC2_560_0_" name="AC2" compartment="kinetics_464_0_" initialConcentration="1.5166963185986e-05" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Starting at 0.015 uM.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>673.6401673640167</moose:xCord>
+            <moose:yCord>15.523215523215505</moose:yCord>
+            <moose:bgColor>yellow</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC1_Gs_562_0_" name="AC1_Gs" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>787.0093644152222</moose:xCord>
+            <moose:yCord>13.08385308385308</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AC2p_Gs_566_0_" name="AC2p_Gs" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>876.0709304642359</moose:xCord>
+            <moose:yCord>14.968814968814984</moose:yCord>
+            <moose:bgColor>green</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="AMP_570_0_" name="AMP" compartment="kinetics_464_0_" initialConcentration="1.01110806988732" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>880.454273759713</moose:xCord>
+            <moose:yCord>166.3201663201663</moose:yCord>
+            <moose:bgColor>pink</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Ca_584_0_" name="Ca" compartment="kinetics_464_0_" initialConcentration="8.08881894074175e-05" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="true">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>99.42219565650547</moose:xCord>
+            <moose:yCord>204.68468468468458</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>18</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Gs_alpha_GTP_588_0_" name="Gs_alpha_GTP" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>1000.0</moose:xCord>
+            <moose:yCord>299.37629937629936</moose:yCord>
+            <moose:bgColor>red</moose:bgColor>
+            <moose:textColor>16</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Gs_GDP_590_0_" name="Gs_GDP" compartment="kinetics_464_0_" initialConcentration="0.00101110806988732" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>749.750946403666</moose:xCord>
+            <moose:yCord>499.95841995841994</moose:yCord>
+            <moose:bgColor>23</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Gs_alpha_GDP_592_0_" name="Gs_alpha_GDP" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>657.700737198645</moose:xCord>
+            <moose:yCord>499.84753984753974</moose:yCord>
+            <moose:bgColor>25</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="BetaGamma_602_0_" name="BetaGamma" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>897.1906754333532</moose:xCord>
+            <moose:yCord>362.2453222453222</moose:yCord>
+            <moose:bgColor>23</moose:bgColor>
+            <moose:textColor>blue</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Epinephrine_606_0_" name="Epinephrine" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>661.0878661087868</moose:xCord>
+            <moose:yCord>799.3347193347194</moose:yCord>
+            <moose:bgColor>61</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Isoproterenol_608_0_" name="Isoproterenol" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>782.8252639968119</moose:xCord>
+            <moose:yCord>799.3347193347194</moose:yCord>
+            <moose:bgColor>4</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="b2AR_610_0_" name="b2AR" compartment="kinetics_464_0_" initialConcentration="8.4225172209297e-05" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>742.9766885833831</moose:xCord>
+            <moose:yCord>800.0</moose:yCord>
+            <moose:bgColor>0</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="L_b2AR_612_0_" name="L_b2AR" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>634.1900777047218</moose:xCord>
+            <moose:yCord>713.5135135135134</moose:yCord>
+            <moose:bgColor>50</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="Lb2AR_GsGDP_614_0_" name="Lb2AR_GsGDP" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>686.9894401275153</moose:xCord>
+            <moose:yCord>713.5135135135134</moose:yCord>
+            <moose:bgColor>1</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="b2AR_GsGDP_616_0_" name="b2AR_GsGDP" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>785.2161785216178</moose:xCord>
+            <moose:yCord>713.5135135135134</moose:yCord>
+            <moose:bgColor>23</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="PDE1_632_0_" name="PDE1" compartment="kinetics_464_0_" initialConcentration="0.00202226175813147" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	CaM-Dependent PDE. Amount calculated from total rate in brain vs. specific rate.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>838.6132695756128</moose:xCord>
+            <moose:yCord>215.10741510741514</moose:yCord>
+            <moose:bgColor>green</moose:bgColor>
+            <moose:textColor>62</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="PDE1_cplx_635_0_" name="PDE1_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>840.605698346284</moose:xCord>
+            <moose:yCord>209.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="CaM_PDE1_637_0_" name="CaM_PDE1" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Activity up 6x following Ca-CaM binding.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>800.7571229328552</moose:xCord>
+            <moose:yCord>210.67221067221067</moose:yCord>
+            <moose:bgColor>green</moose:bgColor>
+            <moose:textColor>62</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="CaM_PDE1_cplx_640_0_" name="CaM_PDE1_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>800.7571229328552</moose:xCord>
+            <moose:yCord>209.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="cAMP_PDEp_642_0_" name="cAMP_PDEp" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This form has about 2X activity as plain PDE. See Sette et al JBC 269:28 18271-18274 1994.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>759.5138473799564</moose:xCord>
+            <moose:yCord>215.10741510741514</moose:yCord>
+            <moose:bgColor>green</moose:bgColor>
+            <moose:textColor>62</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="ePDE_p_cplx_645_0_" name="ePDE_p_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>760.9085475194262</moose:xCord>
+            <moose:yCord>209.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="cAMP_PDE_647_0_" name="cAMP_PDE" compartment="kinetics_464_0_" initialConcentration="0.000454997490990375" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The levels of the PDE are not known at this time. However, enough kinetic info and info about steady-state levels of cAMP etc are around to make it possible to estimate this.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>728.0334728033472</moose:xCord>
+            <moose:yCord>213.44421344421343</moose:yCord>
+            <moose:bgColor>green</moose:bgColor>
+            <moose:textColor>62</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+      <species id="ePDE_cplx_650_0_" name="ePDE_cplx" compartment="kinetics_464_0_" initialConcentration="0" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>721.0599721059972</moose:xCord>
+            <moose:yCord>209.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+            <moose:diffConstant>0.0</moose:diffConstant>
+            <moose:motorConstant>0.0</moose:motorConstant>
+          </moose:ModelAnnotation>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="Km_1" value="0.00362257707565158" units="mmole_per_litre" constant="true"/>
+      <parameter id="Km_2" value="0.000408000296745152" units="mmole_per_litre" constant="true"/>
+      <parameter id="Km_3" value="0.0243894217461777" units="mmole_per_litre" constant="true"/>
+      <parameter id="Km_4" value="0.0346269338565761" units="mmole_per_litre" constant="true"/>
+      <parameter id="Km_5" value="0.00207059711877587" units="mmole_per_litre" constant="true"/>
+      <parameter id="Km_6" value="0.00239881700658384" units="mmole_per_litre" constant="true"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="Lb2AR_GsGDP_614_0_">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> L_b2AR_612_0_ </ci>
+                <ci> Gs_GDP_590_0_ </ci>
+              </apply>
+              <ci> Km_1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> Gs_GDP_590_0_ </ci>
+                <ci> Km_1 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="phosph_PDE_cplx_506_0_">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PKA_active_503_0_ </ci>
+                <ci> cAMP_PDE_647_0_ </ci>
+              </apply>
+              <ci> Km_2 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> cAMP_PDE_647_0_ </ci>
+                <ci> Km_2 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="PDE1_cplx_635_0_">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> PDE1_632_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <ci> Km_3 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> cAMP_542_0_ </ci>
+                <ci> Km_3 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="CaM_PDE1_cplx_640_0_">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> CaM_PDE1_637_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <ci> Km_4 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> cAMP_542_0_ </ci>
+                <ci> Km_4 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="ePDE_p_cplx_645_0_">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> cAMP_PDEp_642_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <ci> Km_5 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> cAMP_542_0_ </ci>
+                <ci> Km_5 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="ePDE_cplx_650_0_">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> cAMP_PDE_647_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <ci> Km_6 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <cn type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <ci> cAMP_542_0_ </ci>
+                <ci> Km_6 </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="CaM_Ca3_bind_Ca_489_0_" name="CaM_Ca3_bind_Ca" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Use K3 = 21.5 uM here from Stemmer and Klee table 3. kb/kf =21.5 * 6e5 so kf = 7.75e-7, kb = 10
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>15.740187288304286</moose:xCord>
+            <moose:yCord>244.93416493416493</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_Ca3_483_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Ca_584_0_" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CaM_Ca4_473_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * CaM_Ca3_bind_Ca_489_0__Kf * CaM_Ca3_483_0_*Ca_584_0_-kinetics_464_0_ * CaM_Ca3_bind_Ca_489_0__Kb * CaM_Ca4_473_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_Ca3_bind_Ca_489_0__Kf </ci>
+                <ci> CaM_Ca3_483_0_ </ci>
+                <ci> Ca_584_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_Ca3_bind_Ca_489_0__Kb </ci>
+                <ci> CaM_Ca4_473_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="CaM_Ca3_bind_Ca_489_0__Kf" value="0.094304142" units="litre_per_mmole_per_second"/>
+            <localParameter id="CaM_Ca3_bind_Ca_489_0__Kb" value="0.03688" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="neurogranin_bind_CaM_491_0_" name="neurogranin_bind_CaM" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Surprisingly, no direct info on rates from neurogranin at this time. These rates are based on GAP-43 binding studies. As GAP-43 and neurogranin share near identity in the CaM/PKC binding regions, and also similarity in phosph and dephosph rates, I am borrowing GAP-43 kinetic info. See Alexander et al JBC 262:13 6108-6113 1987
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>24.905359633393108</moose:xCord>
+            <moose:yCord>244.93416493416493</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_475_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="neurogranin_481_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="neurogranin_CaM_477_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * neurogranin_bind_CaM_491_0__Kf * CaM_475_0_*neurogranin_481_0_-kinetics_464_0_ * neurogranin_bind_CaM_491_0__Kb * neurogranin_CaM_477_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> neurogranin_bind_CaM_491_0__Kf </ci>
+                <ci> CaM_475_0_ </ci>
+                <ci> neurogranin_481_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> neurogranin_bind_CaM_491_0__Kb </ci>
+                <ci> neurogranin_CaM_477_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="neurogranin_bind_CaM_491_0__Kf" value="300.0020376" units="litre_per_mmole_per_second"/>
+            <localParameter id="neurogranin_bind_CaM_491_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="dephosph_neurogranin_493_0_" name="dephosph_neurogranin" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This is put in to keep the basal levels of neurogranin* experimentally reasonable. From various papers, specially Ramakers et al JBC 270:23 1995 13892-13898, it looks like the basal level of phosph is between 20 and 40%. I est around 25 % The kf of 0.005 gives around this level at basal PKC activity levels of 0.1 uM active PKC.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>33.67204622434743</moose:xCord>
+            <moose:yCord>244.93416493416493</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="neurogranin_p_479_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="neurogranin_481_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * dephosph_neurogranin_493_0__Kf * neurogranin_p_479_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> dephosph_neurogranin_493_0__Kf </ci>
+              <ci> neurogranin_p_479_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="dephosph_neurogranin_493_0__Kf" value="0.005" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="CaM_bind_Ca_495_0_" name="CaM_bind_Ca" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Lets use the fast rate consts here. Since the rates are so different, I am not sure whether the order is relevant. These correspond to the TR2C fragment. We use the Martin et al rates here, plus the Drabicowski binding consts. All are scaled by 3X to cell temp. kf = 2e-10 kb = 72 Stemmer _and Klee: K1=.9, K2=1.1. Assume 1.0uM for both. kb/kf=3.6e11. If kb=72, kf = 2e-10 (Exactly the same !) 19 May 2006. Splitting the old CaM-TR2-bind-Ca reaction into two steps, each binding 1 Ca. This improves numerical stability and is conceptually better too. Overall rates are the same, so each kf and kb is the square root of the earlier ones. So kf = 1.125e-4, kb = 8.4853
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>33.67204622434743</moose:xCord>
+            <moose:yCord>244.93416493416493</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_475_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Ca_584_0_" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CaM_Ca_487_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * CaM_bind_Ca_495_0__Kf * CaM_475_0_*Ca_584_0_-kinetics_464_0_ * CaM_bind_Ca_495_0__Kb * CaM_Ca_487_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_bind_Ca_495_0__Kf </ci>
+                <ci> CaM_475_0_ </ci>
+                <ci> Ca_584_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_bind_Ca_495_0__Kb </ci>
+                <ci> CaM_Ca_487_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="CaM_bind_Ca_495_0__Kf" value="5472.007704" units="litre_per_mmole_per_second"/>
+            <localParameter id="CaM_bind_Ca_495_0__Kb" value="10.34" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="CaM_Ca2_bind_Ca_497_0_" name="CaM_Ca2_bind_Ca" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	K3 = 21.5, K4 = 2.8. Assuming that the K4 step happens first, we get kb/kf = 2.8 uM = 1.68e6 so kf =6e-6 assuming kb = 10
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>44.8296473401076</moose:xCord>
+            <moose:yCord>244.93416493416493</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_Ca2_485_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Ca_584_0_" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CaM_Ca3_483_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * CaM_Ca2_bind_Ca_497_0__Kf * CaM_Ca2_485_0_*Ca_584_0_-kinetics_464_0_ * CaM_Ca2_bind_Ca_497_0__Kb * CaM_Ca3_483_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_Ca2_bind_Ca_497_0__Kf </ci>
+                <ci> CaM_Ca2_485_0_ </ci>
+                <ci> Ca_584_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_Ca2_bind_Ca_497_0__Kb </ci>
+                <ci> CaM_Ca3_483_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="CaM_Ca2_bind_Ca_497_0__Kf" value="129.6057204" units="litre_per_mmole_per_second"/>
+            <localParameter id="CaM_Ca2_bind_Ca_497_0__Kb" value="2.4355" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="CaM_Ca_bind_Ca_499_0_" name="CaM_Ca_bind_Ca" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Lets use the fast rate consts here. Since the rates are so different, I am not sure whether the order is relevant. These correspond to the TR2C fragment. We use the Martin et al rates here, plus the Drabicowski binding consts. All are scaled by 3X to cell temp. kf = 2e-10 kb = 72 Stemmer _and Klee: K1=.9, K2=1.1. Assume 1.0uM for both. kb/kf=3.6e11. If kb=72, kf = 2e-10 (Exactly the same !) 19 May 2006. Splitting the old CaM-TR2-bind-Ca reaction into two steps, each binding 1 Ca. This improves numerical stability and is conceptually better too. Overall rates are the same, so each kf and kb is the square root of the earlier ones. So kf = 1.125e-4, kb = 8.4853
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>57.18270571827067</moose:xCord>
+            <moose:yCord>242.9383229383229</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_Ca_487_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Ca_584_0_" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CaM_Ca2_485_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * CaM_Ca_bind_Ca_499_0__Kf * CaM_Ca_487_0_*Ca_584_0_-kinetics_464_0_ * CaM_Ca_bind_Ca_499_0__Kb * CaM_Ca2_485_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_Ca_bind_Ca_499_0__Kf </ci>
+                <ci> CaM_Ca_487_0_ </ci>
+                <ci> Ca_584_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_Ca_bind_Ca_499_0__Kb </ci>
+                <ci> CaM_Ca2_485_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="CaM_Ca_bind_Ca_499_0__Kf" value="3186.87498" units="litre_per_mmole_per_second"/>
+            <localParameter id="CaM_Ca_bind_Ca_499_0__Kb" value="6.5064" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMP_bind_site_B1_526_0_" name="cAMP_bind_site_B1" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Hasler et al FASEB J 6:2734-2741 1992 say Kd =1e-7M for type II, 5.6e-8 M for type I. Take mean which comes to 2e-13 #/cell Smith et al PNAS USA 78:3 1591-1595 1981 have better data. First kf/kb=2.1e7/M = 3.5e-5 (#/cell). Ogreid and Doskeland Febs Lett 129:2 287-292 1981 have figs suggesting time course of complete assoc is _lessthan_ 1 min.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>472.8033472803345</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R2C2_508_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="R2C2_cAMP_510_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * cAMP_bind_site_B1_526_0__Kf * R2C2_508_0_*cAMP_542_0_-kinetics_464_0_ * cAMP_bind_site_B1_526_0__Kb * R2C2_cAMP_510_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_B1_526_0__Kf </ci>
+                <ci> R2C2_508_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_B1_526_0__Kb </ci>
+                <ci> R2C2_cAMP_510_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="cAMP_bind_site_B1_526_0__Kf" value="53999.31456" units="litre_per_mmole_per_second"/>
+            <localParameter id="cAMP_bind_site_B1_526_0__Kb" value="33" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMP_bind_site_B2_528_0_" name="cAMP_bind_site_B2" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	For now let us set this to the same Km (1e-7M) as site B. This gives kf/kb = .7e-7M * 1e6 / (6e5^2) : 1/(6e5^2) = 2e-13:2.77e-12 Smith et al have better values. They say that this is cooperative, so the consts are now kf/kb =8.3e-4
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>482.36700537955784</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R2C2_cAMP_510_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="R2C2_cAMP2_512_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * cAMP_bind_site_B2_528_0__Kf * R2C2_cAMP_510_0_*cAMP_542_0_-kinetics_464_0_ * cAMP_bind_site_B2_528_0__Kb * R2C2_cAMP2_512_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_B2_528_0__Kf </ci>
+                <ci> R2C2_cAMP_510_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_B2_528_0__Kb </ci>
+                <ci> R2C2_cAMP2_512_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="cAMP_bind_site_B2_528_0__Kf" value="53999.31456" units="litre_per_mmole_per_second"/>
+            <localParameter id="cAMP_bind_site_B2_528_0__Kb" value="33" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMP_bind_site_A1_530_0_" name="cAMP_bind_site_A1" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>491.33293484757917</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R2C2_cAMP2_512_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="R2C2_cAMP3_514_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * cAMP_bind_site_A1_530_0__Kf * R2C2_cAMP2_512_0_*cAMP_542_0_-kinetics_464_0_ * cAMP_bind_site_A1_530_0__Kb * R2C2_cAMP3_514_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_A1_530_0__Kf </ci>
+                <ci> R2C2_cAMP2_512_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_A1_530_0__Kb </ci>
+                <ci> R2C2_cAMP3_514_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="cAMP_bind_site_A1_530_0__Kf" value="75001.38624" units="litre_per_mmole_per_second"/>
+            <localParameter id="cAMP_bind_site_A1_530_0__Kb" value="110" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="cAMP_bind_site_A2_532_0_" name="cAMP_bind_site_A2" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>500.8965929468019</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R2C2_cAMP3_514_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="R2C2_cAMP4_516_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * cAMP_bind_site_A2_532_0__Kf * R2C2_cAMP3_514_0_*cAMP_542_0_-kinetics_464_0_ * cAMP_bind_site_A2_532_0__Kb * R2C2_cAMP4_516_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_A2_532_0__Kf </ci>
+                <ci> R2C2_cAMP3_514_0_ </ci>
+                <ci> cAMP_542_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> cAMP_bind_site_A2_532_0__Kb </ci>
+                <ci> R2C2_cAMP4_516_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="cAMP_bind_site_A2_532_0__Kf" value="75001.38624" units="litre_per_mmole_per_second"/>
+            <localParameter id="cAMP_bind_site_A2_532_0__Kb" value="32.5" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Release_C1_534_0_" name="Release_C1" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This has to be fast, as the activation of PKA by cAMP is also fast. kf was 10
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>509.66327953775624</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R2C2_cAMP4_516_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PKA_active_503_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="R2C_cAMP4_518_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Release_C1_534_0__Kf * R2C2_cAMP4_516_0_-kinetics_464_0_ * Release_C1_534_0__Kb * PKA_active_503_0_*R2C_cAMP4_518_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Release_C1_534_0__Kf </ci>
+                <ci> R2C2_cAMP4_516_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Release_C1_534_0__Kb </ci>
+                <ci> PKA_active_503_0_ </ci>
+                <ci> R2C_cAMP4_518_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Release_C1_534_0__Kf" value="60" units="per_second"/>
+            <localParameter id="Release_C1_534_0__Kb" value="17999.77152" units="litre_per_mmole_per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Release_C2_536_0_" name="Release_C2" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>519.4261805140466</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="R2C_cAMP4_518_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PKA_active_503_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="R2_cAMP4_520_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Release_C2_536_0__Kf * R2C_cAMP4_518_0_-kinetics_464_0_ * Release_C2_536_0__Kb * PKA_active_503_0_*R2_cAMP4_520_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Release_C2_536_0__Kf </ci>
+                <ci> R2C_cAMP4_518_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Release_C2_536_0__Kb </ci>
+                <ci> PKA_active_503_0_ </ci>
+                <ci> R2_cAMP4_520_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Release_C2_536_0__Kf" value="60" units="per_second"/>
+            <localParameter id="Release_C2_536_0__Kb" value="17999.77152" units="litre_per_mmole_per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="inhib_PKA_538_0_" name="inhib_PKA" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	This has to be set to zero for matching the expts in vitro. In vivo we need to consider the inhibition though. kf = 1e-5 kb = 1
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>528.9898386132699</moose:xCord>
+            <moose:yCord>449.39708939708936</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>13</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="PKA_active_503_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="PKA_inhibitor_522_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="inhibited_PKA_524_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * inhib_PKA_538_0__Kf * PKA_active_503_0_*PKA_inhibitor_522_0_-kinetics_464_0_ * inhib_PKA_538_0__Kb * inhibited_PKA_524_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> inhib_PKA_538_0__Kf </ci>
+                <ci> PKA_active_503_0_ </ci>
+                <ci> PKA_inhibitor_522_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> inhib_PKA_538_0__Kb </ci>
+                <ci> inhibited_PKA_524_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="inhib_PKA_538_0__Kf" value="60000.40752" units="litre_per_mmole_per_second"/>
+            <localParameter id="inhib_PKA_538_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="CaM_bind_AC1_572_0_" name="CaM_bind_AC1" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Half-max at 20 nM CaM (Tang et al JBC 266:13 8595-8603 1991 kb/kf = 20 nM = 12000 #/cell so kf = kb/12000 = kb * 8.333e-5
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>800.7571229328552</moose:xCord>
+            <moose:yCord>99.79209979209979</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_Ca4_473_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="AC1_550_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC1_CaM_546_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * CaM_bind_AC1_572_0__Kf * CaM_Ca4_473_0_*AC1_550_0_-kinetics_464_0_ * CaM_bind_AC1_572_0__Kb * AC1_CaM_546_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_bind_AC1_572_0__Kf </ci>
+                <ci> CaM_Ca4_473_0_ </ci>
+                <ci> AC1_550_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_bind_AC1_572_0__Kb </ci>
+                <ci> AC1_CaM_546_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="CaM_bind_AC1_572_0__Kf" value="50000.04732" units="litre_per_mmole_per_second"/>
+            <localParameter id="CaM_bind_AC1_572_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="dephosph_AC2_574_0_" name="dephosph_AC2" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Random rate.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>661.2871089858537</moose:xCord>
+            <moose:yCord>0.0</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="AC2p_552_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC2_560_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * dephosph_AC2_574_0__Kf * AC2p_552_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> dephosph_AC2_574_0__Kf </ci>
+              <ci> AC2p_552_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="dephosph_AC2_574_0__Kf" value="0.1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gs_bind_AC2_576_0_" name="Gs_bind_AC2" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Half-max at around 3nM = kb/kf from fig 5 in Feinstein et al PNAS USA 88 10173-10177 1991 kf = kb/1800 = 5.56e-4 kb Ofer&apos;s thesis data indicates it is more like 2 nM. kf = kb/1200 = 8.33e-4
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>880.454273759713</moose:xCord>
+            <moose:yCord>99.79209979209979</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="AC2_560_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Gs_alpha_GTP_588_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC2_Gs_556_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Gs_bind_AC2_576_0__Kf * AC2_560_0_*Gs_alpha_GTP_588_0_-kinetics_464_0_ * Gs_bind_AC2_576_0__Kb * AC2_Gs_556_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Gs_bind_AC2_576_0__Kf </ci>
+                <ci> AC2_560_0_ </ci>
+                <ci> Gs_alpha_GTP_588_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Gs_bind_AC2_576_0__Kb </ci>
+                <ci> AC2_Gs_556_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Gs_bind_AC2_576_0__Kf" value="500000.4732" units="litre_per_mmole_per_second"/>
+            <localParameter id="Gs_bind_AC2_576_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gs_bind_AC1_578_0_" name="Gs_bind_AC1" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	Half-max 8nM from Tang et al JBC266:13 8595-8603 kb/kf = 8 nM = 4800#/cell so kf = kb * 2.08e-4
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>840.605698346284</moose:xCord>
+            <moose:yCord>110.88011088011088</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="AC1_550_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Gs_alpha_GTP_588_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC1_Gs_562_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Gs_bind_AC1_578_0__Kf * AC1_550_0_*Gs_alpha_GTP_588_0_-kinetics_464_0_ * Gs_bind_AC1_578_0__Kb * AC1_Gs_562_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Gs_bind_AC1_578_0__Kf </ci>
+                <ci> AC1_550_0_ </ci>
+                <ci> Gs_alpha_GTP_588_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Gs_bind_AC1_578_0__Kb </ci>
+                <ci> AC1_Gs_562_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Gs_bind_AC1_578_0__Kf" value="126001.908" units="litre_per_mmole_per_second"/>
+            <localParameter id="Gs_bind_AC1_578_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Gs_bind_AC2p_580_0_" name="Gs_bind_AC2p" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	kb/kf = 1.2 nM so kf = kb/720 = 1.3888 * kb.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>920.3028491731421</moose:xCord>
+            <moose:yCord>110.88011088011088</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>10</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="AC2p_552_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="Gs_alpha_GTP_588_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC2p_Gs_566_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Gs_bind_AC2p_580_0__Kf * AC2p_552_0_*Gs_alpha_GTP_588_0_-kinetics_464_0_ * Gs_bind_AC2p_580_0__Kb * AC2p_Gs_566_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Gs_bind_AC2p_580_0__Kf </ci>
+                <ci> AC2p_552_0_ </ci>
+                <ci> Gs_alpha_GTP_588_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Gs_bind_AC2p_580_0__Kb </ci>
+                <ci> AC2p_Gs_566_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Gs_bind_AC2p_580_0__Kf" value="833278.5888" units="litre_per_mmole_per_second"/>
+            <localParameter id="Gs_bind_AC2p_580_0__Kb" value="1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="basalAct_Gs_596_0_" name="basalAct_Gs" reversible="false" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>710.5000996214385</moose:xCord>
+            <moose:yCord>399.2792792792793</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Gs_GDP_590_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gs_alpha_GTP_588_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="BetaGamma_602_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * basalAct_Gs_596_0__Kf * Gs_GDP_590_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> basalAct_Gs_596_0__Kf </ci>
+              <ci> Gs_GDP_590_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="basalAct_Gs_596_0__Kf" value="0.00044206" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Inact_Gs_598_0_" name="Inact_Gs" reversible="false" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>695.5568838414027</moose:xCord>
+            <moose:yCord>398.83575883575884</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Gs_alpha_GTP_588_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gs_alpha_GDP_592_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Inact_Gs_598_0__Kf * Gs_alpha_GTP_588_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> Inact_Gs_598_0__Kf </ci>
+              <ci> Gs_alpha_GTP_588_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Inact_Gs_598_0__Kf" value="0.055304" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Trimerize_Gs_600_0_" name="Trimerize_Gs" reversible="false" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>728.4319585574816</moose:xCord>
+            <moose:yCord>399.2792792792793</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Gs_alpha_GDP_592_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="BetaGamma_602_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gs_GDP_590_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Trimerize_Gs_600_0__Kf * Gs_alpha_GDP_592_0_*BetaGamma_602_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> Trimerize_Gs_600_0__Kf </ci>
+              <ci> Gs_alpha_GDP_592_0_ </ci>
+              <ci> BetaGamma_602_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Trimerize_Gs_600_0__Kf" value="2613.070884" units="litre_per_mmole_per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Epi_bind_b2AR_618_0_" name="Epi_bind_b2AR" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>761.7055190276945</moose:xCord>
+            <moose:yCord>756.2023562023562</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Epinephrine_606_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="b2AR_610_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="L_b2AR_612_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Epi_bind_b2AR_618_0__Kf * Epinephrine_606_0_*b2AR_610_0_-kinetics_464_0_ * Epi_bind_b2AR_618_0__Kb * L_b2AR_612_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Epi_bind_b2AR_618_0__Kf </ci>
+                <ci> Epinephrine_606_0_ </ci>
+                <ci> b2AR_610_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Epi_bind_b2AR_618_0__Kb </ci>
+                <ci> L_b2AR_612_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Epi_bind_b2AR_618_0__Kf" value="670.0723596" units="litre_per_mmole_per_second"/>
+            <localParameter id="Epi_bind_b2AR_618_0__Kb" value="0.4" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Iso_bind_b2AR_620_0_" name="Iso_bind_b2AR" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>793.7836222355052</moose:xCord>
+            <moose:yCord>757.2002772002772</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Isoproterenol_608_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="b2AR_610_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="L_b2AR_612_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Iso_bind_b2AR_620_0__Kf * Isoproterenol_608_0_*b2AR_610_0_-kinetics_464_0_ * Iso_bind_b2AR_620_0__Kb * L_b2AR_612_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Iso_bind_b2AR_620_0__Kf </ci>
+                <ci> Isoproterenol_608_0_ </ci>
+                <ci> b2AR_610_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Iso_bind_b2AR_620_0__Kb </ci>
+                <ci> L_b2AR_612_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Iso_bind_b2AR_620_0__Kf" value="0.6000040752" units="litre_per_mmole_per_second"/>
+            <localParameter id="Iso_bind_b2AR_620_0__Kb" value="0.02" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R_bind_GsGDP_624_0_" name="R_bind_GsGDP" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>825.6624825662483</moose:xCord>
+            <moose:yCord>756.8676368676369</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Gs_GDP_590_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="b2AR_610_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="b2AR_GsGDP_616_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * R_bind_GsGDP_624_0__Kf * Gs_GDP_590_0_*b2AR_610_0_-kinetics_464_0_ * R_bind_GsGDP_624_0__Kb * b2AR_GsGDP_616_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> R_bind_GsGDP_624_0__Kf </ci>
+                <ci> Gs_GDP_590_0_ </ci>
+                <ci> b2AR_610_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> R_bind_GsGDP_624_0__Kb </ci>
+                <ci> b2AR_GsGDP_616_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="R_bind_GsGDP_624_0__Kf" value="115.4973648" units="litre_per_mmole_per_second"/>
+            <localParameter id="R_bind_GsGDP_624_0__Kb" value="0.217" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Iso_bind_RGs_626_0_" name="Iso_bind_RGs" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>665.8696951583979</moose:xCord>
+            <moose:yCord>753.5412335412334</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Isoproterenol_608_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="b2AR_GsGDP_616_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Lb2AR_GsGDP_614_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Iso_bind_RGs_626_0__Kf * Isoproterenol_608_0_*b2AR_GsGDP_616_0_-kinetics_464_0_ * Iso_bind_RGs_626_0__Kb * Lb2AR_GsGDP_614_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Iso_bind_RGs_626_0__Kf </ci>
+                <ci> Isoproterenol_608_0_ </ci>
+                <ci> b2AR_GsGDP_616_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Iso_bind_RGs_626_0__Kb </ci>
+                <ci> Lb2AR_GsGDP_614_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Iso_bind_RGs_626_0__Kf" value="0.1240027128" units="litre_per_mmole_per_second"/>
+            <localParameter id="Iso_bind_RGs_626_0__Kb" value="0.0038783" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Epi_bind_RGs_628_0_" name="Epi_bind_RGs" reversible="true" fast="false">
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>729.8266586969515</moose:xCord>
+            <moose:yCord>755.8697158697158</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>black</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="Epinephrine_606_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="b2AR_GsGDP_616_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Lb2AR_GsGDP_614_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * Epi_bind_RGs_628_0__Kf * Epinephrine_606_0_*b2AR_GsGDP_616_0_-kinetics_464_0_ * Epi_bind_RGs_628_0__Kb * Lb2AR_GsGDP_614_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Epi_bind_RGs_628_0__Kf </ci>
+                <ci> Epinephrine_606_0_ </ci>
+                <ci> b2AR_GsGDP_616_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> Epi_bind_RGs_628_0__Kb </ci>
+                <ci> Lb2AR_GsGDP_614_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Epi_bind_RGs_628_0__Kf" value="412.2726312" units="litre_per_mmole_per_second"/>
+            <localParameter id="Epi_bind_RGs_628_0__Kb" value="0.12164" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="dephosph_PDE_652_0_" name="dephosph_PDE" reversible="false" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	The rates for this are poorly constrained. In adipocytes (probably a different PDE) the dephosphorylation is complete within 15 min, but there are no intermediate time points so it could be much faster. Identity of phosphatase etc is still unknown.
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>721.0599721059972</moose:xCord>
+            <moose:yCord>232.8482328482328</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>62</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="cAMP_PDEp_642_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cAMP_PDE_647_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * dephosph_PDE_652_0__Kf * cAMP_PDEp_642_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> kinetics_464_0_ </ci>
+              <ci> dephosph_PDE_652_0__Kf </ci>
+              <ci> cAMP_PDEp_642_0_ </ci>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="dephosph_PDE_652_0__Kf" value="0.1" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="CaM_bind_PDE1_654_0_" name="CaM_bind_PDE1" reversible="true" fast="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+ 	 	For olf epi PDE1, affinity is 7 nM. Assume same for brain. Reaction should be pretty fast. Assume kb = 5/sec. Then kf = 5 / (0.007 * 6e5) = 1.2e-3
+	 </body>
+        </notes>
+        <annotation>
+          <moose:ModelAnnotation>
+            <moose:xCord>820.6814106395697</moose:xCord>
+            <moose:yCord>232.8482328482328</moose:yCord>
+            <moose:bgColor>white</moose:bgColor>
+            <moose:textColor>62</moose:textColor>
+          </moose:ModelAnnotation>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="CaM_Ca4_473_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="PDE1_632_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="CaM_PDE1_637_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * CaM_bind_PDE1_654_0__Kf * CaM_Ca4_473_0_*PDE1_632_0_-kinetics_464_0_ * CaM_bind_PDE1_654_0__Kb * CaM_PDE1_637_0_
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_bind_PDE1_654_0__Kf </ci>
+                <ci> CaM_Ca4_473_0_ </ci>
+                <ci> PDE1_632_0_ </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> kinetics_464_0_ </ci>
+                <ci> CaM_bind_PDE1_654_0__Kb </ci>
+                <ci> CaM_PDE1_637_0_ </ci>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="CaM_bind_PDE1_654_0__Kf" value="720008.3976" units="litre_per_mmole_per_second"/>
+            <localParameter id="CaM_bind_PDE1_654_0__Kb" value="5" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="AC1CaM_form_cAMP_548_0___AC2p_form_cAMP_554_0___AC2Gs_form_cAMP_558_0___AC1Gs_form_cAMP_564_0___AC2pGs_form_cAMP_568_0_" name="AC1CaM_form_cAMP//AC2p_form_cAMP//AC2Gs_form_cAMP//AC1Gs_form_cAMP//AC2pGs_form_cAMP" reversible="true" fast="false">
+        <annotation>
+          <moose:EnzymaticReaction>
+            <moose:xCord>621.4385335724247</moose:xCord>
+            <moose:yCord>77.6160776160776</moose:yCord>
+            <moose:bgColor>orange</moose:bgColor>
+            <moose:textColor>red</moose:textColor>
+          </moose:EnzymaticReaction>
+        </annotation>
+        <listOfReactants>
+          <speciesReference species="ATP_544_0_" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AC1_CaM_546_0_"/>
+          <modifierSpeciesReference species="AC2p_552_0_"/>
+          <modifierSpeciesReference species="AC2_Gs_556_0_"/>
+          <modifierSpeciesReference species="AC1_Gs_562_0_"/>
+          <modifierSpeciesReference species="AC2p_Gs_566_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <notes>
+            <body xmlns="http://www.w3.org/1999/xhtml">
+		kinetics_464_0_ * ( kcat * ATP_544_0_ * AC1_CaM_546_0_/(Km + ATP_544_0_))
+ 	 </body>
+          </notes>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> ATP_544_0_ </ci>
+                <ci> kinetics_464_0_ </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> AC2p_Gs_566_0_ </ci>
+                    <ci> kcat_4 </ci>
+                    <apply>
+                      <plus/>
+                      <ci> ATP_544_0_ </ci>
+                      <ci> Km </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <ci> ATP_544_0_ </ci>
+                      <ci> Km_1 </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <ci> ATP_544_0_ </ci>
+                      <ci> Km_2 </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <ci> ATP_544_0_ </ci>
+                      <ci> Km_3 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <ci> ATP_544_0_ </ci>
+                      <ci> Km_4 </ci>
+                    </apply>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <times/>
+                        <ci> AC1_Gs_562_0_ </ci>
+                        <ci> kcat_3 </ci>
+                        <apply>
+                          <plus/>
+                          <ci> ATP_544_0_ </ci>
+                          <ci> Km </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> ATP_544_0_ </ci>
+                          <ci> Km_1 </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <ci> ATP_544_0_ </ci>
+                          <ci> Km_2 </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <apply>
+                          <plus/>
+                          <ci> ATP_544_0_ </ci>
+                          <ci> Km_3 </ci>
+                        </apply>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <ci> AC2_Gs_556_0_ </ci>
+                            <ci> kcat_2 </ci>
+                            <apply>
+                              <plus/>
+                              <ci> ATP_544_0_ </ci>
+                              <ci> Km </ci>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <ci> ATP_544_0_ </ci>
+                              <ci> Km_1 </ci>
+                            </apply>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <plus/>
+                              <ci> ATP_544_0_ </ci>
+                              <ci> Km_2 </ci>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <times/>
+                                <ci> AC1_CaM_546_0_ </ci>
+                                <ci> kcat </ci>
+                                <apply>
+                                  <plus/>
+                                  <ci> ATP_544_0_ </ci>
+                                  <ci> Km_1 </ci>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <ci> AC2p_552_0_ </ci>
+                                <ci> kcat_1 </ci>
+                                <apply>
+                                  <plus/>
+                                  <ci> ATP_544_0_ </ci>
+                                  <ci> Km </ci>
+                                </apply>
+                              </apply>
+                            </apply>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <plus/>
+                  <ci> ATP_544_0_ </ci>
+                  <ci> Km </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> ATP_544_0_ </ci>
+                  <ci> Km_1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> ATP_544_0_ </ci>
+                  <ci> Km_2 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> ATP_544_0_ </ci>
+                  <ci> Km_3 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> ATP_544_0_ </ci>
+                  <ci> Km_4 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Km" value="0.0200002538698891" units="mmole_per_litre"/>
+            <localParameter id="kcat" value="18" units="per_second"/>
+            <localParameter id="Km_1" value="0.0201149275465827" units="mmole_per_litre"/>
+            <localParameter id="kcat_1" value="7" units="per_second"/>
+            <localParameter id="Km_2" value="0.0200002538698891" units="mmole_per_litre"/>
+            <localParameter id="kcat_2" value="18" units="per_second"/>
+            <localParameter id="Km_3" value="0.0200002538698891" units="mmole_per_litre"/>
+            <localParameter id="kcat_3" value="18" units="per_second"/>
+            <localParameter id="Km_4" value="0.0600007616096674" units="mmole_per_litre"/>
+            <localParameter id="kcat_4" value="54" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MM_L_b2AR_612_0__1" name="Michaelis-Menten-reduced conversion of Gs_GDP_590_0_ to BetaGamma_602_0_ and Gs_alpha_GTP_588_0_" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="Gs_GDP_590_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Gs_alpha_GTP_588_0_" stoichiometry="1" constant="false"/>
+          <speciesReference species="BetaGamma_602_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="L_b2AR_612_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kinetics_464_0_ </ci>
+                  <ci> Kcat </ci>
+                  <ci> L_b2AR_612_0_ </ci>
+                  <ci> Gs_GDP_590_0_ </ci>
+                </apply>
+                <ci> Km_1 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> Gs_GDP_590_0_ </ci>
+                  <ci> Km_1 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Kcat" value="4.7395" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MM_PKA_active_503_0__1" name="Michaelis-Menten-reduced conversion of cAMP_PDE_647_0_ to cAMP_PDEp_642_0_" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cAMP_PDE_647_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="cAMP_PDEp_642_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PKA_active_503_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kinetics_464_0_ </ci>
+                  <ci> Kcat </ci>
+                  <ci> PKA_active_503_0_ </ci>
+                  <ci> cAMP_PDE_647_0_ </ci>
+                </apply>
+                <ci> Km_2 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cAMP_PDE_647_0_ </ci>
+                  <ci> Km_2 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Kcat" value="2.7" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MM_PDE1_632_0__1" name="Michaelis-Menten-reduced conversion of cAMP_542_0_ to AMP_570_0_" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AMP_570_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="PDE1_632_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kinetics_464_0_ </ci>
+                  <ci> Kcat </ci>
+                  <ci> PDE1_632_0_ </ci>
+                  <ci> cAMP_542_0_ </ci>
+                </apply>
+                <ci> Km_3 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cAMP_542_0_ </ci>
+                  <ci> Km_3 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Kcat" value="1.667" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MM_CaM_PDE1_637_0__1" name="Michaelis-Menten-reduced conversion of cAMP_542_0_ to AMP_570_0_" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AMP_570_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="CaM_PDE1_637_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kinetics_464_0_ </ci>
+                  <ci> Kcat </ci>
+                  <ci> CaM_PDE1_637_0_ </ci>
+                  <ci> cAMP_542_0_ </ci>
+                </apply>
+                <ci> Km_4 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cAMP_542_0_ </ci>
+                  <ci> Km_4 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Kcat" value="7" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MM_cAMP_PDEp_642_0__1" name="Michaelis-Menten-reduced conversion of cAMP_542_0_ to AMP_570_0_" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AMP_570_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cAMP_PDEp_642_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kinetics_464_0_ </ci>
+                  <ci> Kcat </ci>
+                  <ci> cAMP_PDEp_642_0_ </ci>
+                  <ci> cAMP_542_0_ </ci>
+                </apply>
+                <ci> Km_5 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cAMP_542_0_ </ci>
+                  <ci> Km_5 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Kcat" value="20" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MM_cAMP_PDE_647_0__1" name="Michaelis-Menten-reduced conversion of cAMP_542_0_ to AMP_570_0_" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="cAMP_542_0_" stoichiometry="1" constant="false"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AMP_570_0_" stoichiometry="1" constant="false"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cAMP_PDE_647_0_"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kinetics_464_0_ </ci>
+                  <ci> Kcat </ci>
+                  <ci> cAMP_PDE_647_0_ </ci>
+                  <ci> cAMP_542_0_ </ci>
+                </apply>
+                <ci> Km_6 </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cAMP_542_0_ </ci>
+                  <ci> Km_6 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+          <listOfLocalParameters>
+            <localParameter id="Kcat" value="10" units="per_second"/>
+          </listOfLocalParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
